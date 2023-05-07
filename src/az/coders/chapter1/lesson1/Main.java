@@ -4,16 +4,27 @@ package az.coders.chapter1.lesson1;
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        short a = '3';
+        System.out.println(a);
+        char b = '3';
+        System.out.println(b);
+        Integer c = null;
+        int _in;
+        int $you;
+        int ni2k;
+        int nik2;
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        String d = null;
+        OUTER:
+        for (int i = 0; i < 5; i++) {
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+            INNER:
+            for (; ; ) {
+                System.out.println("hello");
+                if(true){
+                    break OUTER;
+                }
+            }
         }
     }
 }
