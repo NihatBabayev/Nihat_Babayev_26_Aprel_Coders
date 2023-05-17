@@ -2,6 +2,8 @@ package az.coders.chapter1.lesson7.DateAndTime;
 
 import java.sql.PreparedStatement;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Subscription {
     static LocalDate getSubscription(LocalDate date ,int amountOfPaidMoney) {
@@ -48,7 +50,9 @@ public class Subscription {
         System.out.println(Subscription.getSubscription(date, 15));
         System.out.println(Subscription.getSubscription(date, 25));
         System.out.println(Subscription.getSubscription(date, 60));
-
+        date.format(DateTimeFormatter.ofPattern("MMM/dd/yyyy hh:mm "));
+        LocalDate n = LocalDate.of(12,12,12);
+        
 
 
     }
