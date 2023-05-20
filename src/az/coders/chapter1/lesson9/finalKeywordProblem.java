@@ -2,13 +2,13 @@ package az.coders.chapter1.lesson9;
 
 public class finalKeywordProblem {
     public static void main(String[] args) {
-        final int x = 10;
+        final int a = 10;
 
-        try {
-            x = 20; // Compilation error: Cannot assign a value to final variable 'x'
-        } catch (FinalFieldException e) {
-            System.out.println(e.getMessage());
-        }
+//        try  {
+//            a = 20;
+//        } catch (FinalFieldException e) {
+//            System.out.println(e.getMessage());
+//        }
     }
 }
 
