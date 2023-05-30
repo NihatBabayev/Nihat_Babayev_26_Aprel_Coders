@@ -4,7 +4,7 @@ import java.awt.*;
 
 public class FirstProblem {
     public static void main(String[] args) {
-        int point = 0;
+        int point = 91;
         if (point <= 50)
             point = 50;
         point = point / 10 + ((point % 10 == 0) ? 0 : 1);
