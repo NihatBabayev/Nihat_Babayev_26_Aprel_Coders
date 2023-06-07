@@ -18,4 +18,3 @@ public class ThirdProblem {
         repeatedLetters.forEach(System.out::println);
     }
 }
-

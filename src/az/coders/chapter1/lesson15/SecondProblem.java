@@ -1,6 +1,5 @@
 package az.coders.chapter1.lesson15;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 
