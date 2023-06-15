@@ -5,7 +5,7 @@ package az.coders.chapter1.lesson20;
 // of a Java object
 import java.io.*;
 
-class User implements java.io.Serializable
+class User implements Serializable
 {
     public String name;
 
@@ -17,10 +17,10 @@ class User implements java.io.Serializable
     }
 
 }
-class Student implements Serializable{
-    public String name;
-    public Student(String name){
-        this.name = name;
+class Student extends User implements Serializable{
+
+    public Student(String name) {
+        super(name);
     }
 }
 public class FourthProblem
@@ -28,7 +28,6 @@ public class FourthProblem
     public static void main(String[] args)
     {
         User object = new User( "Nihat");
-        Student object1  = new Student("Nihat");
         File file = new File("C:\\Users\\user\\IdeaProjects\\Nihat_Babayev_26_Aprel_Coders\\src\\az\\coders\\chapter1\\lesson20\\file.ser");
 
 
@@ -50,7 +49,6 @@ public class FourthProblem
         }
 
 
-        Demo object1 = null;
 
         // Deserialization
         try(var in = new ObjectInputStream(new FileInputStream(file)))
@@ -58,12 +56,12 @@ public class FourthProblem
 
 
             // Method for deserialization of object
-            object1 = (Demo)in.readObject();
+            Student studentObject = (Student) in.readObject();
 
             System.out.println("Object has been deserialized ");
 
-            System.out.println("a = " + object1.a);
-            System.out.println("b = " + object1.b);
+            System.out.println("a = " + studentObject.name);
+
         }
 
         catch(IOException ex)
