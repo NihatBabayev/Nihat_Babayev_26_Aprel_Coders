@@ -4,13 +4,16 @@ import java.util.Arrays;
 
 public class ThirdProblem {
     static int[] arrConverter(int[] arr, int c){
+
         if(c>0){
+            c--;
             arrConverter(arr, c - 1);
         }
-        int temp  = arr[c];
-        arr[c] = arr[arr.length - c - 1];
-        arr[arr.length - c -1 ] = temp;
-
+        if(c == 0 ) {
+            int temp = arr[c];
+            arr[c] = arr[arr.length - c - 1];
+            arr[arr.length - c - 1] = temp;
+        }
         return arr;
     }
     public static void main(String[] args) {
