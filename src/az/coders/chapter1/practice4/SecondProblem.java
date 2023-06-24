@@ -13,7 +13,7 @@ public class SecondProblem {
     }
     public static File changeExtension(File f, String newExtension) {
 
-        int i = f.getName().length() - 1;
+        int i = f.getName().length() ;
         String name = f.getName().substring(0,i);
         return new File(f.getParent(), name + "."+newExtension);
     }
