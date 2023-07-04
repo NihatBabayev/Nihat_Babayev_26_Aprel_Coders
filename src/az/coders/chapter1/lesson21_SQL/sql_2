@@ -1,0 +1,49 @@
+create table customers(
+	id serial primary key,
+	name varchar(50),
+	city varchar(50)
+
+)
+create table orders(
+	id serial primary key,
+	customer_id int,
+	amount numeric(10,2),
+	order_date date,
+	foreign key(customer_id) references customers(id)
+)
+
+insert into customers(name, city)
+values('John Doe','New York'),
+	('Jane Smith', 'San Fransisco'),
+	('David Johnson', 'Los Angeles'),
+	('Sarah Williams','Chicago')
+
+
+
+insert into orders(customer_id, amount, order_date)
+values (1,100.50,'2023-06-15' ),
+	(2,75.20,'2023-06-16'),
+	(1,50.00,'2023-06-18'),
+	(3,200.80,'2023-06-20'),
+	(2,120.75,'2023-06-21'),
+	(4,90.30,'2023-06-22'),
+	(3,150.00,'2023-06-23'),
+	(1,80.50,'2023-06-25')
+
+select * from customers;
+select * from orders;
+
+
+
+select customers.name, sum(orders.amount) as expenses
+from customers
+left join orders on customers.id = orders.customer_id
+group by customers.name
+
+
+select customers.city, count(*) as number
+from customers
+left join orders on customers.id = orders.customer_id
+group by customers.city
+
+

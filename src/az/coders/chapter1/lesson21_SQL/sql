@@ -21,6 +21,13 @@ where salary < 1000;
 
 
 
+
+alter table employees
+add column created_date date default now();
+
+
+
+
 select name from employees
 where job = 'Java developer';
 
