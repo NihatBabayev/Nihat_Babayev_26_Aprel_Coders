@@ -1,0 +1,47 @@
+CREATE VIEW customer_expenses AS
+select customers.name, sum(orders.amount) as expenses
+from customers
+left join orders on customers.id = orders.customer_id
+group by customers.name
+
+SELECT * FROM customer_expenses;
+
+
+
+
+CREATE FUNCTION add_numbers(a integer, b integer)
+RETURNS integer AS
+$$
+BEGIN
+    RETURN a + b;
+END;
+$$
+LANGUAGE plpgsql;
+
+
+SELECT add_numbers(5, 3);
+
+
+
+
+CREATE PROCEDURE add_row(
+    IN p_name VARCHAR,
+    IN p_city VARCHAR
+)
+LANGUAGE plpgsql
+AS $$
+BEGIN
+    INSERT INTO customers (name, city)
+    VALUES (p_name, p_city);
+END;
+$$;
+
+
+
+
+CALL add_row('Nihat','Baku');
+
+select * from customers;
+
+
+
