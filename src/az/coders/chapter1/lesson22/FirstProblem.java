@@ -23,7 +23,7 @@ public class FirstProblem {
         ) {
 
 
-
+            int result = preparedStatement.executeUpdate();
 
             psUpdate.setString(1,"Nihat");
             psUpdate.setString(2,"Babayev");
