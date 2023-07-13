@@ -1,8 +1,8 @@
-package az.coders.chapter1.lesson23;
+package az.coders.chapter1.lesson22;
 
 import java.sql.*;
 
-public class FirstProblem {
+public class SecondProblem {
     public static void main(String[] args) {
         int a = 1000;
         int b = 2000;
